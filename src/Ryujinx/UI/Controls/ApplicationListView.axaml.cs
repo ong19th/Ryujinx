@@ -5,7 +5,7 @@ using Avalonia.Interactivity;
 using FluentAvalonia.UI.Controls;
 using Ryujinx.Ava.UI.Helpers;
 using Ryujinx.Ava.UI.ViewModels;
-using Ryujinx.UI.App.Common;
+using Ryujinx.Ava.Utilities.AppLibrary;
 using System;
 using System.Linq;
 
@@ -28,12 +28,6 @@ namespace Ryujinx.Ava.UI.Controls
         {
             if (sender is ListBox { SelectedItem: ApplicationData selected })
                 RaiseEvent(new ApplicationOpenedEventArgs(selected, ApplicationOpenedEvent));
-        }
-
-        public void GameList_SelectionChanged(object sender, SelectionChangedEventArgs args)
-        {
-            if (DataContext is MainWindowViewModel viewModel && sender is ListBox { SelectedItem: ApplicationData selected })
-                viewModel.ListSelectedApplication = selected;
         }
 
         private async void IdString_OnClick(object sender, RoutedEventArgs e)

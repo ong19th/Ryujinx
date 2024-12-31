@@ -5,10 +5,10 @@ using Avalonia.Interactivity;
 using Avalonia.Threading;
 using Ryujinx.Ava.Common.Locale;
 using Ryujinx.Ava.UI.Windows;
+using Ryujinx.Ava.Utilities.Configuration;
 using Ryujinx.Common;
 using Ryujinx.Common.Configuration;
 using Ryujinx.Common.Logging;
-using Ryujinx.UI.Common.Configuration;
 using System;
 
 namespace Ryujinx.Ava.UI.Views.Main
@@ -41,7 +41,7 @@ namespace Ryujinx.Ava.UI.Views.Main
         private void VSyncMode_PointerReleased(object sender, PointerReleasedEventArgs e)
         {
             Window.ViewModel.ToggleVSyncMode();
-            Logger.Info?.Print(LogClass.Application, $"VSync Mode toggled to: {Window.ViewModel.AppHost.Device.VSyncMode}");
+            Logger.Info?.PrintMsg(LogClass.Application, $"VSync Mode toggled to: {Window.ViewModel.AppHost.Device.VSyncMode}");
         }
 
         private void DockedStatus_PointerReleased(object sender, PointerReleasedEventArgs e)

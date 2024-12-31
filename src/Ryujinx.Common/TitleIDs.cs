@@ -8,6 +8,8 @@ namespace Ryujinx.Common
 {
     public static class TitleIDs
     {
+        public static ReactiveObject<Optional<string>> CurrentApplication { get; set; } = new();
+        
         public static GraphicsBackend SelectGraphicsBackend(string titleId, GraphicsBackend currentBackend)
         {
             switch (currentBackend)
@@ -33,6 +35,8 @@ namespace Ryujinx.Common
             "010028600EBDA000", // Mario 3D World
             "0100152000022000", // Mario Kart 8 Deluxe
             "01005CA01580E000", // Persona 5
+            "0100187003A36000", // Pokémon: Let's Go, Evoli!
+            "010003f003a34000", // Pokémon: Let's Go, Pikachu!
             "01008C0016544000", // Sea of Stars
             "01006A800016E000", // Smash Ultimate
             "0100000000010000", // Super Mario Odyessy

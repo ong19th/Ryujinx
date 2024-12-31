@@ -4,10 +4,10 @@ using Avalonia.Platform.Storage;
 using Avalonia.Threading;
 using FluentAvalonia.UI.Controls;
 using Ryujinx.Ava.Common.Locale;
+using Ryujinx.Ava.Common.Models;
 using Ryujinx.Ava.UI.Helpers;
+using Ryujinx.Ava.Utilities.AppLibrary;
 using Ryujinx.HLE.FileSystem;
-using Ryujinx.UI.App.Common;
-using Ryujinx.UI.Common.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -76,10 +76,7 @@ namespace Ryujinx.Ava.UI.ViewModels
 
             ApplicationData = applicationData;
 
-            if (Application.Current.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
-            {
-                StorageProvider = desktop.MainWindow.StorageProvider;
-            }
+            StorageProvider = RyujinxApp.MainWindow.StorageProvider;
 
             LoadUpdates();
         }
